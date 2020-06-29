@@ -4,6 +4,7 @@
 #Install to OpenWRT/LEDE
 
 git clone https://github.com/sirpdboy/luci-app-autopoweroff
+
 cp -r luci-app-autopoweroff LEDE_DIR/package/luci-app-autopoweroff
 
 cd LEDE_DIR
