@@ -9,7 +9,7 @@ LUCI_TITLE:=LuCI support for Scheduled poweroff
 LUCI_DEPENDS:=+luci
 LUCI_PKGARCH:=all
 PKG_VERSION:=1.1
-PKG_RELEASE:=1
+PKG_RELEASE:=4
 
 PKG_MAINTAINER:=sirpdboy <https://github.com/sirpdboy/luci-app-autopoweroff/>
 
