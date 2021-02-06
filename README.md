@@ -44,7 +44,7 @@
 
 ## 说明 [![](https://img.shields.io/badge/-说明-F5F5F5.svg)](#说明-)
 
-源码来源：https://github.com/sirpdboy/luci-app-autopoweroff/compile
+源码来源：https://github.com/sirpdboy/luci-app-autopoweroff
 
 你可以随意使用其中的源码，但请注明出处。
 ============================
@@ -74,7 +74,7 @@ btmob 主题: https://github.com/sirpdboy/luci-theme-btmob
 
 |     <img src="https://img.shields.io/badge/-支付宝-F5F5F5.svg" href="#赞助支持本项目-" height="25" alt="图飞了😂"/>  |  <img src="https://img.shields.io/badge/-微信-F5F5F5.svg" height="25" alt="图飞了😂" href="#赞助支持本项目-"/>  | 
 | :-----------------: | :-------------: |
-|<img src="https://img.vim-cn.com/fd/8e2793362ac3510094961b04407beec569b2b4.png" width="150" height="150" alt="图飞了😂" href="#赞助支持本项目-"/>|<img src="https://img.vim-cn.com/c7/675730a88accebf37a97d9e84e33529322b6e9.png" width="15" height="150" alt="图飞了😂" href="#赞助支持本项目-"/>|
+|<img src="https://img.vim-cn.com/fd/8e2793362ac3510094961b04407beec569b2b4.png" width="150" height="150" alt="图飞了😂" href="#赞助支持本项目-"/>|<img src="https://img.vim-cn.com/c7/675730a88accebf37a97d9e84e33529322b6e9.png" width="150" height="150" alt="图飞了😂" href="#赞助支持本项目-"/>|
 
 <a href="#readme">
     <img src="https://img.shields.io/badge/-返回顶部-orange.svg" alt="图飞了😂" title="返回顶部" align="right"/>
