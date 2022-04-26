@@ -39,12 +39,19 @@ start()
 	[ -n "`tail -c1 /etc/crontabs/root`" ] && echo >> /etc/crontabs/root
 	config_load autotimeset
 	config_foreach run_autotimeset login
+	/etc/init.d/cron reload
 }
 
 stop()
 {
     del_cru
+	/etc/init.d/cron reload
 	echo "Auto set has stop."
+}
+
+restart()
+{
+	start
 }
 
 del_cru()
