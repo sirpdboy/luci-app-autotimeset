@@ -39,9 +39,4 @@ e=s:option(Value,"minute",translate("Minute"), translate("Set a minute"))
 e.datatype = "range(0,59)"
 e.rmempty = false
 
-local e=luci.http.formvalue("cbi.apply")
-if e then
-  io.popen("/etc/init.d/autotimeset restart")
-end
-
 return m
