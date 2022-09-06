@@ -21,7 +21,7 @@ e:value(3,translate("Scheduled ReNetwork"))
 e.default=2
 
 e=s:option(ListValue,"week",translate("Week Day"), translate("The start-up cycle is weekly or daily"))
-e:value(7,translate("Everyday"))
+e:value("*",translate("Everyday"))
 e:value(1,translate("Monday"))
 e:value(2,translate("Tuesday"))
 e:value(3,translate("Wednesday"))
@@ -29,7 +29,7 @@ e:value(4,translate("Thursday"))
 e:value(5,translate("Friday"))
 e:value(6,translate("Saturday"))
 e:value(0,translate("Sunday"))
-e.default=7
+e.default="*"
 
 e=s:option(Value,"hour",translate("Hour"), translate("Set an hour"))
 e.datatype = "range(0,23)"
