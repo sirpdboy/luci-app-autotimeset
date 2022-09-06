@@ -22,7 +22,7 @@ e:value(3,translate("Scheduled ReNetwork"))
 e.default=2
 
 e=s:option(ListValue,"week",translate("Week Day"))
-e:value(7,translate("Everyday"))
+e:value("*",translate("Everyday"))
 e:value(1,translate("Monday"))
 e:value(2,translate("Tuesday"))
 e:value(3,translate("Wednesday"))
