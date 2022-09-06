@@ -30,7 +30,7 @@ e:value(4,translate("Thursday"))
 e:value(5,translate("Friday"))
 e:value(6,translate("Saturday"))
 e:value(0,translate("Sunday"))
-e.default=7
+e.default="*"
 
 e=s:option(Value,"hour",translate("Hour"))
 e.datatype = "range(0,23)"
