@@ -13,13 +13,11 @@ s.anonymous=true
 e=s:option(TextValue, "customscript" ,translate("Edit Custom Script"))
 e.description = translate("The execution content of the [Scheduled Customscript] in the task name")
 e.rows = 5
-e.default = '#!/bin/sh'
 e.rmempty = false
 
 e=s:option(TextValue, "customscript2" ,translate("Edit Custom Script2"))
 e.description = translate("The execution content of the [Scheduled Customscript2] in the task name")
 e.rows = 5
-e.default = '#!/bin/sh'
 e.rmempty = false
 
 s=m:section(TypedSection,"stime","")

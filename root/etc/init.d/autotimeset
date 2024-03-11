@@ -8,20 +8,12 @@ LOG=$TMP/autotimeset.log
 TT=/etc/init.d/autotimesetrun
 CR=/etc/crontabs/root
 [ ! -d $TMP ] && mkdir -p $TMP 2>/dev/null
-[ -s $LOG ] && echo ' ' >> $LOG
+[ -s $LOG ] && echo -e '' >> $LOG
 run_autotimeset()
 {
 ssum=$(grep -c stime /etc/config/autotimeset)
-[ x`uci -q get autotimeset.@global[0].customscript | head -n1` = 'x#!/bin/sh' ] && uci -q get autotimeset.@global[0].customscript > /etc/autotimeset/timesetcustomscript || {
-	echo '#!/bin/sh' >/etc/autotimeset/timesetcustomscript
-	uci -q get autotimeset.@global[0].customscript >> /etc/autotimeset/timesetcustomscript
-}
-[ x`uci -q get autotimeset.@global[0].customscript2 | head -n1` = 'x#!/bin/sh' ] && uci -q get autotimeset.@global[0].customscript2 > /etc/autotimeset/timesetcustomscript2 || {
-	echo '#!/bin/sh' >/etc/autotimeset/timesetcustomscript2
-	uci -q get autotimeset.@global[0].customscript2 >> /etc/autotimeset/timesetcustomscript2
-}
-echo 'start(){'  >>$TT
-echo "Service autotimesetrun started!" >>$TT
+[  `uci -q get autotimeset.@global[0].customscript  |  wc -l ` > 0 ] && uci -q get autotimeset.@global[0].customscript > /etc/autotimeset/timesetcustomscript
+[  `uci -q get autotimeset.@global[0].customscript2  |  wc -l ` > 0 ] && uci -q get autotimeset.@global[0].customscript2 > /etc/autotimeset/timesetcustomscript2
 for i in $(seq 0 $((ssum-1)))
 do
 	enable=$(uci -q get autotimeset.@stime[$i].enable )
@@ -97,11 +89,8 @@ do
 				[ $ttype = '0' ] && echo "$cmd" >> $CR || echo  "sleep $delay &&  /usr/bin/timesethandler downwifi Startup_task" >>$TT
 				;;
 		esac
-	
     fi
-
  done
- echo '}'  >>$TT
 }
 
 start()
@@ -109,14 +98,13 @@ start()
 	del_cru
 	[ -n "`tail -c1 $CR`" ] && echo >> $CR
 	run_autotimeset
+	echo '}'  >>$TT
 	/etc/init.d/cron reload
 }
 
 stop()
 {
     del_cru
-    echo 'start(){'  >>$TT
-    echo "Service autotimesetrun started!"  >>$TT
     echo '}'  >>$TT
     /etc/init.d/cron reload
 }
@@ -127,8 +115,8 @@ restart()
 }
 
 del_cru()
-{
-    echo -e '#!/bin/sh /etc/rc.common\n\nSTART=99\n' > $TT
+{   
+    echo -e '#!/bin/sh /etc/rc.common\n\nSTART=99\nstart(){\necho "Service autotimesetrun started! " >> $LOG\n' > $TT
     sed -i '/timesethandler/d' $CR >/dev/null 2>&1
 }
 
